@@ -34,7 +34,7 @@ end
 def decode_word(word)
   output_word = ''
   arr = word.split
-  arr.each { |n| output_word = (output_word + (decode_characters n) ) }
+  arr.each { |n| output_word = (output_word + (decode_characters n)) }
   output_word
 end
 
@@ -44,7 +44,7 @@ def decode_phrase(phrase)
   output = ''
   arr = phrase.split('   ')
   arr.each do |n|
-    output = "#{output}#{(decode_word n)} "
+    output = "#{output}#{decode_word n} "
   end
   output.strip
 end
