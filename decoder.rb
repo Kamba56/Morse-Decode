@@ -30,3 +30,12 @@ Morse_Alphabets = {
 def decodeCharacters (char)
   return Morse_Alphabets[char]
 end
+
+def decodeWord (word)
+  outputWord = ''
+  arr = word.split
+  arr.each{ |n| outputWord = (outputWord + (decodeCharacters n) )}
+  return outputWord
+end
+
+# test comand decodeWord "-- -.--   -. .- -- ."
