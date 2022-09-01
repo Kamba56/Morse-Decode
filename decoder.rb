@@ -39,3 +39,12 @@ def decodeWord (word)
 end
 
 # test comand decodeWord "-- -.--   -. .- -- ."
+
+def decodePhrase (phrase)
+  output = ''
+  arr = phrase.split('   ')
+  arr.each do |n|
+    output = output + (decodeWord n) + ' '
+  end
+  return output.strip
+end
