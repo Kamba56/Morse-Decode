@@ -1,4 +1,4 @@
-Morse_Alphabets = {
+MORSE_ALPHABETS = {
   '.-' => 'A',
   '-...' => 'B',
   '-.-.' => 'C',
@@ -24,27 +24,27 @@ Morse_Alphabets = {
   '.--' => 'W',
   '-..-' => 'X',
   '-.--' => 'Y',
-  '--..' => 'Z',
-}
+  '--..' => 'Z'
+}.freeze
 
-def decodeCharacters (char)
-  return Morse_Alphabets[char]
+def decode_characters(char)
+  MORSE_ALPHABETS[char]
 end
 
-def decodeWord (word)
-  outputWord = ''
+def decode_word(word)
+  output_word = ''
   arr = word.split
-  arr.each{ |n| outputWord = (outputWord + (decodeCharacters n) )}
-  return outputWord
+  arr.each { |n| output_word = (output_word + (decode_characters n) ) }
+  output_word
 end
 
 # test comand decodeWord "-- -.--   -. .- -- ."
 
-def decodePhrase (phrase)
+def decode_phrase(phrase)
   output = ''
   arr = phrase.split('   ')
   arr.each do |n|
-    output = output + (decodeWord n) + ' '
+    output = "#{output}#{(decode_word n)} "
   end
-  return output.strip
+  output.strip
 end
